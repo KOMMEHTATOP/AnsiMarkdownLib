@@ -30,7 +30,7 @@
 
                     Console.WriteLine($"Ошибка копирования в буфер: {ex.Message}");
                 }
-                return result;
+                return result; 
             }
         }
     }
