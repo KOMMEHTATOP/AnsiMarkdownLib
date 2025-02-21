@@ -10,10 +10,13 @@
 		<Description>This is a library for converting ansi and markdown code into text for insertion into the necessary places. In particular, I use it for my discord text formatting application.</Description>
 		<Copyright>MIT</Copyright>
 		<PackageTags>Ansi, Markdown, Discord, Text Formatting</PackageTags>
+		<PackageIcon>icon.png</PackageIcon>
+		<RepositoryUrl>https://github.com/KOMMEHTATOP/AnsiMarkdownLib</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="TextCopy" Version="6.2.1" />
 	</ItemGroup>
-
 </Project>
