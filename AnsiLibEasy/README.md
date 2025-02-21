@@ -3,22 +3,22 @@
 [![NuGet](https://img.shields.io/nuget/v/AnsiMarkdownLib.svg?style=flat-square)](https://www.nuget.org/packages/AnsiMarkdownLib)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
-Библиотека для форматирования текста с использованием **ANSI-кодов** и **Markdown-синтаксиса**. Поддерживает интеграцию с **Discord**, позволяя легко создавать красиво оформленные сообщения.
+Р‘РёР±Р»РёРѕС‚РµРєР° РґР»СЏ С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёСЏ С‚РµРєСЃС‚Р° СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј **ANSI-РєРѕРґРѕРІ** Рё **Markdown-СЃРёРЅС‚Р°РєСЃРёСЃР°**. РџРѕРґРґРµСЂР¶РёРІР°РµС‚ РёРЅС‚РµРіСЂР°С†РёСЋ СЃ **Discord**, РїРѕР·РІРѕР»СЏСЏ Р»РµРіРєРѕ СЃРѕР·РґР°РІР°С‚СЊ РєСЂР°СЃРёРІРѕ РѕС„РѕСЂРјР»РµРЅРЅС‹Рµ СЃРѕРѕР±С‰РµРЅРёСЏ.
 
-## Основные возможности
+## РћСЃРЅРѕРІРЅС‹Рµ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё
 
-- **ANSI-форматирование**: Поддержка цветов, жирного текста, подчеркивания и других стилей.
-- **Markdown-форматирование**: Жирный текст, курсив, зачеркивание, скрытый текст.
-- **Интеграция с Discord**: ANSI-текст автоматически оборачивается в блоки кода для Discord.
-- **Копирование в буфер обмена**: Удобное копирование отформатированного текста.
+- **ANSI-С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ**: РџРѕРґРґРµСЂР¶РєР° С†РІРµС‚РѕРІ, Р¶РёСЂРЅРѕРіРѕ С‚РµРєСЃС‚Р°, РїРѕРґС‡РµСЂРєРёРІР°РЅРёСЏ Рё РґСЂСѓРіРёС… СЃС‚РёР»РµР№.
+- **Markdown-С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ**: Р–РёСЂРЅС‹Р№ С‚РµРєСЃС‚, РєСѓСЂСЃРёРІ, Р·Р°С‡РµСЂРєРёРІР°РЅРёРµ, СЃРєСЂС‹С‚С‹Р№ С‚РµРєСЃС‚.
+- **РРЅС‚РµРіСЂР°С†РёСЏ СЃ Discord**: ANSI-С‚РµРєСЃС‚ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РѕР±РѕСЂР°С‡РёРІР°РµС‚СЃСЏ РІ Р±Р»РѕРєРё РєРѕРґР° РґР»СЏ Discord.
+- **РљРѕРїРёСЂРѕРІР°РЅРёРµ РІ Р±СѓС„РµСЂ РѕР±РјРµРЅР°**: РЈРґРѕР±РЅРѕРµ РєРѕРїРёСЂРѕРІР°РЅРёРµ РѕС‚С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРЅРѕРіРѕ С‚РµРєСЃС‚Р°.
 
-## Установка
+## РЈСЃС‚Р°РЅРѕРІРєР°
 
-Установите библиотеку через NuGet: https://www.nuget.org/packages/AnsiMarkdownLib/
+РЈСЃС‚Р°РЅРѕРІРёС‚Рµ Р±РёР±Р»РёРѕС‚РµРєСѓ С‡РµСЂРµР· NuGet: https://www.nuget.org/packages/AnsiMarkdownLib/
 
-## Примеры использования
+## РџСЂРёРјРµСЂС‹ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ
 
-# ANSI-форматирование
+# ANSI-С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ
 
 ```csharp
 string coloredText = TextFormatter.ApplyAnsiColor("Hello, World!", AvailableColors.Red);
@@ -26,7 +26,7 @@ string boldText = TextFormatter.ApplyAnsiBold("Bold Text");
 string underlinedText = TextFormatter.ApplyAnsiUnderline("Underlined Text");
 ```
 
-# Markdown-форматирование
+# Markdown-С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ
 
 ```scharp
 string boldMarkdown = TextFormatter.ApplyMarkDownBold("Bold Text");
@@ -34,7 +34,7 @@ string italicMarkdown = TextFormatter.ApplyMarkDownItalics("Italic Text");
 string strikeMarkdown = TextFormatter.ApplyMarkDownStrike("Strike Text");
 ```
 
-# Интеграция с Discord
+# РРЅС‚РµРіСЂР°С†РёСЏ СЃ Discord
 
 ```scharp
 using AnsiMarkdownLib.Builders;
