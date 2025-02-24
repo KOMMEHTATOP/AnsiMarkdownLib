@@ -5,18 +5,24 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageId>AnsiMarkdownLib</PackageId>
-		<Version>0.0.1</Version>
+		<Version>0.0.2</Version>
 		<Authors>BasharovBM (KOMMEHTATOP)</Authors>
 		<Description>This is a library for converting ansi and markdown code into text for insertion into the necessary places. In particular, I use it for my discord text formatting application.</Description>
 		<Copyright>MIT</Copyright>
 		<PackageTags>Ansi, Markdown, Discord, Text Formatting</PackageTags>
-		<PackageIcon>icon.png</PackageIcon>
 		<RepositoryUrl>https://github.com/KOMMEHTATOP/AnsiMarkdownLib</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="TextCopy" Version="6.2.1" />
 	</ItemGroup>
+	<ItemGroup>
+		<None Include="C:\Users\Besh-\source\repos\KOMMEHTATOP\AnsiMarkdownLib\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+
 </Project>
