@@ -21,7 +21,7 @@
 		<PackageReference Include="TextCopy" Version="6.2.1" />
 	</ItemGroup>
 	<ItemGroup>
-		<None Include="C:\Users\Besh-\source\repos\KOMMEHTATOP\AnsiMarkdownLib\README.md" Pack="true" PackagePath="\" />
+		<None Include="README.md" Pack="true" PackagePath="." />
 	</ItemGroup>
 
 
