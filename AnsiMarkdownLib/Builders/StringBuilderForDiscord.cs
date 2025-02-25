@@ -1,68 +1,38 @@
 ﻿using AnsiMarkdownLib.Colors;
-using AnsiMarkdownLib.Formatters;
 using AnsiMarkdownLib.Helpers;
+using System.Text.RegularExpressions;
 
-namespace AnsiMarkdownLib.Builders
+public class StringBuilderForDiscord
 {
-    public class StringBuilderForDiscord
+    public static string ApplyAnsiColor(string text, AvailableColors color) => AnsiBufferForDiscord(TextFormatter.ApplyAnsiColor(text, color));
+    public static string ApplyAnsiBold(string text) => AnsiBufferForDiscord(TextFormatter.ApplyAnsiBold(text));
+    public static string ApplyAnsiUnderline(string text) => AnsiBufferForDiscord(TextFormatter.ApplyAnsiUnderline(text));
+
+    public static string ApplyMultipleAnsi(string text, AvailableColors? color = null, bool isBold = false, bool isUnderlined = false)
     {
-        public static string ApplyAnsiColor(string text, AvailableColors color)
-        {
-            string formattedText = TextFormatter.ApplyAnsiColor(text, color);
-            return AnsiBufferForDiscord(formattedText);
-        }
-        public static string ApplyAnsiBold(string text)
-        {
-            string formattedText = TextFormatter.ApplyAnsiBold(text);
-            return AnsiBufferForDiscord(formattedText);
-        }
+        return AnsiBufferForDiscord(TextFormatter.ApplyMultipleAnsi(text, color, isBold, isUnderlined));
+    }
 
-        public static string ApplyAnsiUnderline(string text)
-        {
-            string formattedText = TextFormatter.ApplyAnsiUnderline(text);
-            return AnsiBufferForDiscord(formattedText);
-        }
+    public static string ApplyMarkDownBold(string text) => MarkDownBufferForDiscord(TextFormatter.ApplyMarkDownBold(text));
+    public static string ApplyMarkDownItalics(string text) => MarkDownBufferForDiscord(TextFormatter.ApplyMarkDownItalics(text));
+    public static string ApplyMarkDownStrike(string text) => MarkDownBufferForDiscord(TextFormatter.ApplyMarkDownStrike(text));
+    public static string ApplyMarkDownHidden(string text) => MarkDownBufferForDiscord(TextFormatter.ApplyMarkDownHidden(text));
 
-        public static string ApplyMultipleAnsi(string text, AvailableColors? color = null, bool isBold = false, bool isUnderlined = false)
+    private static string AnsiBufferForDiscord(string formattedText) => ClipboardHelper.CopyToClipboard(formattedText, true);
+    private static string MarkDownBufferForDiscord(string formattedText) => ClipboardHelper.CopyToClipboard(formattedText, false);
+
+    public static string ConvertToHtml(string text)
+    {
+        if (string.IsNullOrEmpty(text))
         {
-            string formattedText = TextFormatter.ApplyMultipleAnsi(text, color, isBold, isUnderlined);
-            return AnsiBufferForDiscord(formattedText);
+            return string.Empty;
         }
 
-        public static string ApplyMarkDownBold(string text)
-        {
-            string formattedText = TextFormatter.ApplyMarkDownBold(text);
-            return MarkDownBufferForDiscord(formattedText);
-        }
+        text = Regex.Replace(text, @"\*\*(.*?)\*\*", "<b>$1</b>");
+        text = Regex.Replace(text, @"_(.*?)_", "<i>$1</i>");
+        text = Regex.Replace(text, @"~~(.*?)~~", "<s>$1</s>");
+        text = Regex.Replace(text, @"\|\|(.*?)\|\|", "<span class='spoiler'>$1</span>");
 
-        public static string ApplyMarkDownItalics(string text)
-        {
-            string formattedText = TextFormatter.ApplyMarkDownItalics(text);
-            return MarkDownBufferForDiscord(formattedText);
-        }
-
-        public static string ApplyMarkDownStrike(string text)
-        {
-            string formattedText = TextFormatter.ApplyMarkDownStrike(text);
-            return MarkDownBufferForDiscord(formattedText);
-        }
-
-        public static string ApplyMarkDownHidden(string text)
-        {
-            string formattedText = TextFormatter.ApplyMarkDownHidden(text);
-            return MarkDownBufferForDiscord(formattedText);
-        }
-
-        public static string ApplyMultipleMarkDown(string text, bool isBold, bool isItalic, bool isStrike, bool isHidden)
-        {
-            string formattedText = TextFormatter.ApplyMultipleMarkDown(text, isBold, isItalic, isStrike, isHidden);
-            return MarkDownBufferForDiscord(formattedText);
-        }
-
-
-        private static string AnsiBufferForDiscord(string formattedText) => ClipboardHelper.CopyToClipboard(formattedText, true);
-
-        private static string MarkDownBufferForDiscord(string formattedText) => ClipboardHelper.CopyToClipboard(formattedText, false);
-
+        return text;
     }
 }
